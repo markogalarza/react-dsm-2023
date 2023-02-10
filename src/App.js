@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import Producto from './Components/Producto';
+import Productos from './Components/Productos';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const productos = [
+    {
+      nombre: '111111',
+      precio: 45.5,
+      fecha: new Date(2023, 2,5)
+    },
+    {
+      nombre: '22222',
+      precio: 45.5,
+      fecha: new Date(2023, 2,6)
+    },
+    {
+      nombre: '333333',
+      precio: 45.5,
+      fecha: new Date(2023, 2,12)
+    }
+]
+
+return (
+  <div>
+    <p>Hola Mundo</p>
+    <Productos productos={productos} />
+  </div>
+);
 }
 
 export default App;
