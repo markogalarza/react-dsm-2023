@@ -7,29 +7,29 @@ function App() {
 
   const productos = [
     {
-      nombre: '111111',
-      precio: 45.5,
-      fecha: new Date(2023, 2,5)
+      nombre: 'Ratón óptico 1',
+      precio: 15.50,
+      fecha: new Date(2022, 2, 2)
     },
     {
-      nombre: '22222',
-      precio: 45.5,
-      fecha: new Date(2023, 2,6)
+      nombre: 'Ratón óptico 2',
+      precio: 25.50,
+      fecha: new Date(2022, 2, 2)
     },
     {
-      nombre: '333333',
-      precio: 45.5,
-      fecha: new Date(2023, 2,12)
-    }
-]
+      nombre: 'Ratón óptico 3',
+      precio: 9.50,
+      fecha: new Date(2022, 2, 2)
+    },
+  ];
 
-return (
-  <div>
-    <Header />
-    <Productos productos={productos} />
-    <Footer />
-  </div>
-);
+  return (
+    <div>
+      <Header />
+      <Productos productos={productos} />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
