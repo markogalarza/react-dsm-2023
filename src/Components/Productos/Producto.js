@@ -1,12 +1,15 @@
 import './Producto.css';
 import FechaProducto from './FechaProducto';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import ProductosContext from '../../store/ProductosContext';
 
 function Producto(props) {
 
     const [nombre, setNombre] = useState(props.producto.nombre);
+
+    const contextProductos = useContext(ProductosContext);
 
     //let nombre = props.producto.nombre;
     const fecha = props.producto.fecha;
@@ -18,6 +21,10 @@ function Producto(props) {
 
     const borraHandler = () => {
         props.borraProducto(props.producto.id)
+    }
+
+    const borraHandlerContext = () => {
+        contextProductos.borraProducto(props.producto.id)
     }
 
     const [show, setShow] = useState(false);
@@ -36,6 +43,7 @@ function Producto(props) {
                 Ver detalles
             </Button>
             <Button variant="danger" onClick={borraHandler} >BORRAR</Button>
+            <Button variant="danger" onClick={borraHandlerContext} >BORRAR2</Button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>

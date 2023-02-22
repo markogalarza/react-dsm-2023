@@ -1,9 +1,14 @@
+import { useContext } from "react";
+import AutContext from "../../store/AutContext";
+
 function FechaProducto(props) {
+
+    const contextLanguage = useContext(AutContext).language;
 
     const fecha = props.fecha;
     const ano = fecha.getFullYear();
-    const mes = fecha.toLocaleString('es-ES', { month: 'long' });
-    const dia = fecha.toLocaleString('es-ES', { day: '2-digit' });
+    const mes = fecha.toLocaleString(contextLanguage, { month: 'long' });
+    const dia = fecha.toLocaleString(contextLanguage, { day: '2-digit' });
 
     return (
         <div className='producto-fecha'>
