@@ -7,7 +7,7 @@ const Contact = () => {
     return (
         <>
             <h2>CONTACTO DE LA SEDE DE {parametrosSearch.get('sede')}</h2>
-            <p>Esta es nuestra dirección Y NUESTRA PERSONA DE CONTACTO ES {parametrosSearch.get('persona')}.</p>
+            <p>Esta es nuestra dirección y nuestra persona de contacto es {parametrosSearch.get('persona')}.</p>
         </>
     )
 }
