@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ReactDOM from 'react-dom';
 import './NuevoProducto.css';
+import { useNavigate } from 'react-router-dom';
 
 const InfoModal = (props) => {
 
@@ -39,8 +40,10 @@ const NuevoProducto = (props) => {
 
     const [nombreValid, setNombreValid] = useState(true);
 
+    const navega = useNavigate();
+
     useEffect(() => {
-        nombreRef.current.focus();
+        //nombreRef.current.focus(); //Lo comento por comodidad
     }, []);
 
     const nombreHandler = (event) => {
@@ -68,8 +71,10 @@ const NuevoProducto = (props) => {
         setNombre('');
         setPrecio('');
         setFecha('');
-        nombreRef.current.focus();
+        //nombreRef.current.focus(); //Lo comento por comodidad
         // nombreRef.current.value = '';
+        setTimeout(()=>navega('/products'),1000);
+       
     }
 
     const onBlurHandler = () => {
