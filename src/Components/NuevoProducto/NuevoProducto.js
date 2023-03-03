@@ -82,9 +82,11 @@ const NuevoProducto = (props) => {
         // nombreRef.current.value = '';
         //setTimeout(()=>navega('/products'),1000);
 
-        axios.post('https://dsm-react-demo-2023-default-rtdb.europe-west1.firebasedatabase.app/productos.json', producto)
+        axios.post('https://dsm-react-demo-2023-default-rtdb.europe-west1.firebasedatabase.app/productos.json?auth=' + props.idToken, producto)
         .then((response)=>{
             alert('El producto se ha insertado en la base de datos');
+        }).catch((error)=>{
+            alert('No se puede crear el producto');
         })
        
     }

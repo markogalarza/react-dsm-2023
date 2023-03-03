@@ -23,9 +23,11 @@ function Producto(props) {
 
     const borraHandler = () => {
         props.borraProducto(props.producto.id);
-        axios.delete('https://dsm-react-demo-2023-default-rtdb.europe-west1.firebasedatabase.app/productos/'+props.producto.id+'.json')
+        axios.delete('https://dsm-react-demo-2023-default-rtdb.europe-west1.firebasedatabase.app/productos/'+props.producto.id+'.json?auth=' + props.idToken)
         .then((response)=>{
             alert('Producto borrado');
+        }).catch((error)=>{
+            alert('No se puede borrar');
         })
     }
 

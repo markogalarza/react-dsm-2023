@@ -40,6 +40,12 @@ function Header() {
                 </Nav.Item>
                 <Nav.Item>
                     <Link to='/contact?sede=PAMPLONA&persona=Julián'>Contacto</Link>
+                </Nav.Item> | {'   '}
+                <Nav.Item>
+                    <Link to='/login'>LOGIN</Link> | {'   '}
+                </Nav.Item>
+                <Nav.Item>
+                    <Link to='/registro'>REGISTRO</Link>
                 </Nav.Item>
             </Nav>
         </div>

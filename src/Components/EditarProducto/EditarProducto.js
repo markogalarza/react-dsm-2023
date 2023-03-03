@@ -45,9 +45,11 @@ const EditarProducto = (props) => {
             descripcion: descripcion
         }
         
-        axios.put('https://dsm-react-demo-2023-default-rtdb.europe-west1.firebasedatabase.app/productos/'+  parametros.id +'.json', producto)
+        axios.put('https://dsm-react-demo-2023-default-rtdb.europe-west1.firebasedatabase.app/productos/'+  parametros.id +'.json?auth=' + props.idToken, producto)
         .then((response)=>{
             alert('Producto actualizado');
+        }).catch((error)=>{
+            alert('No se puede actualizar el producto');
         })
 
     }
